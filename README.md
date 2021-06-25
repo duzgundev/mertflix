@@ -34,3 +34,16 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### TODO
+
+- [x] React router
+- [ ] Context api
+- [ ] Firebase auth
+- [ ] Favoriye alma
+- [ ] Responsive layout
+- [ ] Navbar'daki diğer sayfalar
+- [ ] Load More özelliği
+- [ ] Film detay sayfası
+- [ ] Lazy loading
+- [ ] Skeleton loader
