@@ -38,12 +38,13 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### TODO
 
 - [x] React router
-- [ ] Context api
-- [ ] Firebase auth
+- [x] Context api
+- [x] Firebase auth
+- [ ] TMDB setup
 - [ ] Favoriye alma
+- [ ] Film detay sayfası
 - [ ] Responsive layout
 - [ ] Navbar'daki diğer sayfalar
 - [ ] Load More özelliği
-- [ ] Film detay sayfası
 - [ ] Lazy loading
 - [ ] Skeleton loader

@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
-
+import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 
 export default function About() {
   return (
-    <div>
+    <div className="font-body">
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -16,6 +15,8 @@ export default function About() {
           <Link to="/browse">Browse</Link>
         </li>
       </ul>
+      <Button className="text-primary" />
+      <Button theme="primary" />
     </div>
   );
 }
