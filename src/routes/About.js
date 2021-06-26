@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { Link } from 'react-router-dom';
 
 export default function About() {
   return (
     <div>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/browse">Browse</Link>
+        </li>
+      </ul>
     </div>
   );
 }
