@@ -1,15 +1,14 @@
-import { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Home from '../routes/Home';
-import About from '../routes/About';
-import Browse from '../routes/Browse';
-import Login from '../routes/Login';
-import Register from '../routes/Register';
-import Favorites from '../routes/Favorites';
+import Home from '@routes/Home';
+import About from '@routes/About';
+import Browse from '@routes/Browse';
+import Login from '@routes/Login';
+import Register from '@routes/Register';
+import Favorites from '@routes/Favorites';
+import PrivateRoute from '@routes/PrivateRoute';
 
-import { AuthProvider } from '../utils/auth';
-import PrivateRoute from '../routes/PrivateRoute';
+import { AuthProvider } from '@utils/auth';
 
 function App() {
   return (
