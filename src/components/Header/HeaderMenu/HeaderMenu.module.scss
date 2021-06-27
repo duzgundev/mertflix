@@ -1,0 +1,24 @@
+.base {
+  @apply flex items-center flex-grow;
+}
+
+.links {
+  @apply flex ml-8;
+}
+
+.link {
+  @apply mx-3
+  transition-colors duration-300;
+
+  &:hover {
+    @apply text-gray-400;
+  }
+}
+
+.buttons {
+  @apply ml-auto;
+}
+
+.button {
+  @apply mx-2;
+}
