@@ -1,15 +1,22 @@
 .base {
-  @apply py-2 px-4 rounded bg-primary text-white;
+  @apply py-2 px-4
+  border border-transparent rounded
+text-white
+  transition-colors duration-500;
+
+  &:hover {
+    @apply text-gray-300;
+  }
+}
+
+.primary {
+  @apply bg-primary;
 
   &:hover {
     @apply bg-red-700;
   }
 }
 
-.primary {
-  @apply bg-blue-500;
-
-  &:hover {
-    @apply bg-blue-700;
-  }
+.outline {
+  @apply border-white;
 }
