@@ -1,3 +1,24 @@
 @tailwind base;
+
+@layer base {
+  html {
+    @apply h-full;
+  }
+
+  body {
+    @apply h-full font-body bg-gray-900 text-white;
+  }
+
+  #root {
+    @apply h-full;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply text-gray-900;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
