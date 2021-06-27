@@ -1,21 +1,9 @@
-import React from 'react';
-
-import { Link } from 'react-router-dom';
+import Layout from '@components/Layout';
 
 export default function Browse() {
   return (
-    <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/browse">Browse</Link>
-        </li>
-      </ul>
-    </div>
+    <Layout>
+      <div>BROWSE </div>
+    </Layout>
   );
 }

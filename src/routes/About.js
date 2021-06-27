@@ -1,22 +1,9 @@
-import Button from '../components/Button';
-import { Link } from 'react-router-dom';
+import Layout from '@components/Layout';
 
 export default function About() {
   return (
-    <div className="font-body">
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/browse">Browse</Link>
-        </li>
-      </ul>
-      <Button className="text-primary" />
-      <Button theme="primary" />
-    </div>
+    <Layout>
+      <div>ABOUT</div>
+    </Layout>
   );
 }

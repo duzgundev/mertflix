@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import firebase from '../utils/firebase';
+
+import Layout from '@components/Layout';
+
+import firebase from '@utils/firebase';
 
 export default function Register() {
   const [name, setName] = useState('');
@@ -8,7 +11,8 @@ export default function Register() {
   const [password, setPassword] = useState('');
   const history = useHistory();
 
-  async function handleRegister() {
+  async function handleRegister(e) {
+    e.preventDefault();
     try {
       await firebase.auth().createUserWithEmailAndPassword(email, password);
       await firebase.auth().currentUser.updateProfile({
@@ -21,8 +25,8 @@ export default function Register() {
   }
 
   return (
-    <div>
-      <form onSubmit={(e) => e.preventDefault() && false}>
+    <Layout>
+      <form onSubmit={handleRegister}>
         <input
           type="text"
           placeholder="Name"
@@ -44,8 +48,8 @@ export default function Register() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button onClick={handleRegister}>Sign Up</button>
+        <button>Sign Up</button>
       </form>
-    </div>
+    </Layout>
   );
 }

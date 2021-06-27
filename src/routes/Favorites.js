@@ -1,7 +1,12 @@
-import React from 'react';
-import firebase from '../utils/firebase';
+import Layout from '@components/Layout';
+
+import firebase from '@utils/firebase';
 
 export default function Favorites() {
   const displayName = firebase.auth().currentUser.displayName;
-  return <div>{`Welcome ${displayName}`}</div>;
+  return (
+    <Layout>
+      <div>{`Welcome ${displayName}`}</div>
+    </Layout>
+  );
 }

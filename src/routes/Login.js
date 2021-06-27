@@ -1,24 +1,28 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router';
-import firebase from '../utils/firebase';
+
+import Layout from '@components/Layout';
+
+import firebase from '@utils/firebase';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const history = useHistory();
 
-  async function handleLogin() {
+  async function handleLogin(e) {
+    e.preventDefault();
     try {
-      firebase.auth().signInWithEmailAndPassword(email, password);
-      history.push('/browse');
+      await firebase.auth().signInWithEmailAndPassword(email, password);
+      history.push('/favorites');
     } catch (error) {
       console.error(error);
     }
   }
 
   return (
-    <div>
-      <form onSubmit={(e) => e.preventDefault() && false}>
+    <Layout>
+      <form onSubmit={handleLogin}>
         <input
           type="email"
           placeholder="Email"
@@ -33,8 +37,8 @@ export default function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button onClick={handleLogin}>Sign In</button>
+        <button>Sign In</button>
       </form>
-    </div>
+    </Layout>
   );
 }
