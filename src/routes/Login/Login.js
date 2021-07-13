@@ -2,8 +2,11 @@ import { useState } from 'react';
 import { useHistory } from 'react-router';
 
 import Layout from '@components/Layout';
+import Button from '@components/Button';
 
 import firebase from '@utils/firebase';
+
+import styles from './Login.module.scss';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -22,8 +25,9 @@ export default function Login() {
 
   return (
     <Layout>
-      <form onSubmit={handleLogin}>
+      <form className={styles.form} onSubmit={handleLogin}>
         <input
+          className={styles.input}
           type="email"
           placeholder="Email"
           required
@@ -31,13 +35,14 @@ export default function Login() {
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
+          className={styles.input}
           type="password"
           placeholder="Password"
           required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button>Sign In</button>
+        <Button>Sign In</Button>
       </form>
     </Layout>
   );

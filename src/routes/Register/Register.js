@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import Layout from '@components/Layout';
+import Button from '@components/Button';
 
 import firebase from '@utils/firebase';
+
+import styles from './Register.module.scss';
 
 export default function Register() {
   const [name, setName] = useState('');
@@ -26,8 +29,9 @@ export default function Register() {
 
   return (
     <Layout>
-      <form onSubmit={handleRegister}>
+      <form className={styles.form} onSubmit={handleRegister}>
         <input
+          className={styles.input}
           type="text"
           placeholder="Name"
           required
@@ -35,6 +39,7 @@ export default function Register() {
           onChange={(e) => setName(e.target.value)}
         />
         <input
+          className={styles.input}
           type="email"
           placeholder="Email"
           required
@@ -42,13 +47,14 @@ export default function Register() {
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
+          className={styles.input}
           type="password"
           placeholder="Password"
           required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button>Sign Up</button>
+        <Button>Sign Up</Button>
       </form>
     </Layout>
   );
