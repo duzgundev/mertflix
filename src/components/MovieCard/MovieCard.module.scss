@@ -1,7 +1,7 @@
 .image {
-  @apply rounded max-w-xs;
+  @apply max-w-xs rounded;
 }
 
 .text {
-  @apply text-center text-gray-300;
+  @apply max-w-xs text-center text-gray-300;
 }
