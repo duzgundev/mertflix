@@ -18,14 +18,6 @@ export default function HeaderMenu() {
       name: 'Home',
     },
     {
-      path: '/about',
-      name: 'About',
-    },
-    {
-      path: '/browse',
-      name: 'Browse',
-    },
-    {
       path: '/favorites',
       name: 'Favorites',
     },

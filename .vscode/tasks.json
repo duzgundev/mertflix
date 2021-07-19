@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+
+  "tasks": [
+    {
+      "label": "New react folder and files",
+
+      "command": "cd ${relativeFileDirname}/.. && mkdir ${input:dirName} && touch '${input:dirName}/${input:dirName}.js' '${input:dirName}/${input:dirName}.module.scss' '${input:dirName}/index.js'",
+
+      "type": "shell",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    }
+  ],
+
+  // ........................................................................................
+
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "dirName",
+      "description": "Complete my folder name",
+      "default": "Folder to create"
+    }
+  ]
+}

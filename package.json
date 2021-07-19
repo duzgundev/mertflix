@@ -5,11 +5,14 @@
   "dependencies": {
     "@craco/craco": "^6.1.2",
     "@heroicons/react": "^1.0.1",
+    "axios": "^0.21.1",
     "classnames": "^2.3.1",
     "firebase": "^8.6.8",
+    "flickity": "^2.2.2",
     "node-sass": "4.14",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-flickity-component": "^3.6.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1"
   },
