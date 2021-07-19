@@ -79,13 +79,14 @@
   top: 0;
   bottom: 24px;
   width: 44px;
+  border-radius: 4px;
 }
 
 .flickity-prev-next-button.previous {
-  left: 0;
+  left: -40px;
 }
 .flickity-prev-next-button.next {
-  right: 0;
+  right: -40px;
 }
 /* right to left */
 .flickity-rtl .flickity-prev-next-button.previous {
