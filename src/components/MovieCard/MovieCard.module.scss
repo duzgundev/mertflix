@@ -1,7 +1,21 @@
+.base {
+  @apply relative;
+
+  &:hover {
+    .icon {
+      @apply opacity-100;
+    }
+  }
+}
+
 .image {
   @apply max-w-xs rounded;
 }
 
 .text {
   @apply max-w-xs text-center text-gray-300;
+}
+
+.icon {
+  @apply absolute top-2 right-4 cursor-pointer opacity-0 transition-all;
 }
