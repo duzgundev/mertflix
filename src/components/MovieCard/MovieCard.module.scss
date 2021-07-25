@@ -1,5 +1,5 @@
 .base {
-  @apply relative;
+  @apply w-80;
 
   &:hover {
     .icon {
@@ -8,8 +8,14 @@
   }
 }
 
+.imageContainer {
+  @apply relative h-0 w-full overflow-hidden;
+  // 16:9 aspect ratio
+  padding: 28.125% 0;
+}
+
 .image {
-  @apply max-w-xs rounded;
+  @apply absolute inset-0 w-full rounded;
 }
 
 .text {
