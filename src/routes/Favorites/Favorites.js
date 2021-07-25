@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 import Layout from '@components/Layout';
@@ -17,13 +17,18 @@ export default function Favorites() {
 
   return (
     <Layout>
-      <h2 className="text-3xl mb-20 mt-4">{`${currentUser.displayName}'s Favorites`}</h2>
-      <MovieGrid>
-        {favorites &&
-          favorites.map((movie) => (
+      <h2 className="capitalize text-3xl mb-20 mt-4">{`${currentUser.displayName}'s Favorites`}</h2>
+      {favorites?.length ? (
+        <MovieGrid>
+          {favorites.map((movie) => (
             <MovieCard className="px-0.5" movie={movie} key={movie.id} />
           ))}
-      </MovieGrid>
+        </MovieGrid>
+      ) : (
+        <div className="text-center pt-10 text-gray-300">
+          You haven't added any titles to your favorites yet.
+        </div>
+      )}
     </Layout>
   );
 }
