@@ -40,11 +40,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - [x] React router
 - [x] Context api
 - [x] Firebase auth
-- [ ] TMDB setup
-- [ ] Favoriye alma
-- [ ] Film detay sayfası
-- [ ] Responsive layout
-- [ ] Navbar'daki diğer sayfalar
-- [ ] Load More özelliği
+- [x] TMDB setup
+- [x] Favoriye alma
+- [ ] Film detay modalı
 - [ ] Lazy loading
+- [ ] Responsive layout
 - [ ] Skeleton loader
