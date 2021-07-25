@@ -6,7 +6,7 @@ import styles from './HeaderLogo.module.scss';
 
 export default function HeaderLogo() {
   return (
-    <Link to="/browse">
+    <Link to="/">
       <img className={styles.base} src={Logo} />
     </Link>
   );
