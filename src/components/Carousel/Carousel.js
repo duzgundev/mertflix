@@ -5,6 +5,8 @@ import './Flickity.css';
 export default function Carousel({ className, children, options }) {
   const flickityOptions = {
     groupCells: true,
+    contain: true,
+    pageDots: false,
   };
 
   return (

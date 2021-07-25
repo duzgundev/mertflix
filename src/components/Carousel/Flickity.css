@@ -43,13 +43,11 @@
 
 .flickity-button {
   position: absolute;
-  background: rgba(20, 20, 20, 0.5);
   border: none;
   color: #fff;
 }
 
 .flickity-button:hover {
-  background: rgba(20, 20, 20, 0.7);
   cursor: pointer;
 }
 
@@ -77,7 +75,7 @@
 
 .flickity-prev-next-button {
   top: 0;
-  bottom: 24px;
+  bottom: 48px;
   width: 44px;
   border-radius: 4px;
 }
