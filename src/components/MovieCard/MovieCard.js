@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react';
+import { useHistory } from 'react-router';
 
 import { StarIcon } from '@heroicons/react/outline';
 import { StarIcon as StarIconFilled } from '@heroicons/react/solid';
@@ -8,21 +9,23 @@ import { AuthContext } from '@utils/auth';
 import { IMG_API } from '@utils/tmdb';
 import { db } from '@utils/firebase';
 
+import fallback_img from '@images/fallback_img.jpg';
+
 import styles from './MovieCard.module.scss';
 
 export default function MovieCard({ className, movie }) {
   const movieName = movie.title || movie.name;
 
+  const history = useHistory();
   const [favorite, setFavorite] = useState(false);
-
   const { currentUser } = useContext(AuthContext);
 
   async function toggleFavorite(movie, currentUser) {
     const userId = currentUser.uid;
-    const docRef = db.collection('favorites').doc(`${userId}${movie.id}`);
+    const docRef = db.collection('favorites').doc(`${userId + movie.id}`);
 
     await docRef.get().then((doc) => {
-      if (doc.exists) {
+      if (currentUser && doc.exists) {
         docRef.delete();
         setFavorite(false);
       } else {
@@ -36,7 +39,7 @@ export default function MovieCard({ className, movie }) {
 
   async function fetchFavorite(currentUser) {
     const userId = currentUser.uid;
-    const docRef = db.collection('favorites').doc(`${userId}${movie.id}`);
+    const docRef = db.collection('favorites').doc(`${userId + movie.id}`);
 
     await docRef.get().then((doc) => {
       if (doc.exists) {
@@ -50,19 +53,29 @@ export default function MovieCard({ className, movie }) {
   return (
     <div
       className={cx(styles.base, className)}
-      onMouseEnter={() => fetchFavorite(currentUser)}
+      onMouseEnter={() => !!currentUser && fetchFavorite(currentUser)}
     >
-      <img
-        className={styles.image}
-        src={`${IMG_API}${movie.backdrop_path}`}
-        alt={movieName}
-      />
+      <div className={styles.imageContainer}>
+        <img
+          className={styles.image}
+          src={`${
+            movie.backdrop_path ? IMG_API + movie.backdrop_path : fallback_img
+          }`}
+          alt={movieName}
+        />
+      </div>
       <p className={styles.text}>{movieName} </p>
-      <button onClick={() => toggleFavorite(movie, currentUser)}>
+      <button
+        onClick={() =>
+          !!currentUser
+            ? toggleFavorite(movie, currentUser)
+            : history.push('/login')
+        }
+      >
         {favorite ? (
-          <StarIconFilled className={styles.icon} width="24" />
+          <StarIconFilled color="#E4B721" className={styles.icon} width="24" />
         ) : (
-          <StarIcon className={styles.icon} width="24" />
+          <StarIcon color="#E4B721" className={styles.icon} width="24" />
         )}
       </button>
     </div>
