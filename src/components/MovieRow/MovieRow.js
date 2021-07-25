@@ -19,7 +19,7 @@ export default function MovieRow({ className, title, fetchUrl }) {
 
   return (
     <div className={className}>
-      <h2 className="text-2xl pl-3 mb-4">{title}</h2>
+      <h2 className="text-2xl mb-4">{title}</h2>
       <Carousel>
         {movies.map((movie) => (
           <MovieCard className="mr-2" movie={movie} key={movie.id} />
