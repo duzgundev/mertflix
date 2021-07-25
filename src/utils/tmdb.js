@@ -2,7 +2,7 @@
 // const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&query=`;
 const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 
-const IMG_API = `https://image.tmdb.org/t/p/w400/`;
+const IMG_API_400 = `https://image.tmdb.org/t/p/w400/`;
 
 const requests = {
   fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
@@ -15,6 +15,6 @@ const requests = {
   fetchDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99`,
 };
 
-export { IMG_API };
+export { IMG_API_400 };
 
 export default requests;

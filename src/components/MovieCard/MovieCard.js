@@ -6,7 +6,7 @@ import { StarIcon as StarIconFilled } from '@heroicons/react/solid';
 import cx from 'classnames';
 
 import { AuthContext } from '@utils/auth';
-import { IMG_API } from '@utils/tmdb';
+import { IMG_API_400 } from '@utils/tmdb';
 import { db } from '@utils/firebase';
 
 import fallback_img from '@images/fallback_img.jpg';
@@ -59,7 +59,9 @@ export default function MovieCard({ className, movie }) {
         <img
           className={styles.image}
           src={`${
-            movie.backdrop_path ? IMG_API + movie.backdrop_path : fallback_img
+            movie.backdrop_path
+              ? IMG_API_400 + movie.backdrop_path
+              : fallback_img
           }`}
           alt={movieName}
         />
