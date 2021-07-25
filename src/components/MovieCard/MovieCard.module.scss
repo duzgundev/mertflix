@@ -1,5 +1,5 @@
 .base {
-  @apply w-80;
+  @apply relative;
 
   &:hover {
     .icon {
@@ -19,7 +19,7 @@
 }
 
 .text {
-  @apply max-w-xs text-center text-gray-300;
+  @apply text-center text-gray-300;
 }
 
 .icon {
