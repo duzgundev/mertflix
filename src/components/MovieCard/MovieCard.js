@@ -7,6 +7,7 @@ import styles from './MovieCard.module.scss';
 
 export default function MovieCard({ className, movie }) {
   const movieName = movie.title || movie.name;
+
   return (
     <div className={cx(styles.base, className)}>
       <img
