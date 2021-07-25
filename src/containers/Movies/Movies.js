@@ -1,10 +1,9 @@
-import cx from 'classnames';
 import TMDB from '@utils/tmdb';
 import MovieRow from '@components/MovieRow';
 
 export default function Movies({ className }) {
   return (
-    <div className={cx('space-y-6', className)}>
+    <div className={className}>
       <MovieRow title="Trending Now" fetchUrl={TMDB.fetchTrending} />
       <MovieRow
         title="Mertflix Originals"
