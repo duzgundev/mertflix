@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router';
 
-import Layout from '@components/Layout';
 import Button from '@components/Button';
 
 import firebase from '@utils/firebase';
@@ -24,26 +23,24 @@ export default function Login() {
   }
 
   return (
-    <Layout>
-      <form className={styles.form} onSubmit={handleLogin}>
-        <input
-          className={styles.input}
-          type="email"
-          placeholder="Email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          className={styles.input}
-          type="password"
-          placeholder="Password"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <Button>Sign In</Button>
-      </form>
-    </Layout>
+    <form className={styles.form} onSubmit={handleLogin}>
+      <input
+        className={styles.input}
+        type="email"
+        placeholder="Email"
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        className={styles.input}
+        type="password"
+        placeholder="Password"
+        required
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <Button>Sign In</Button>
+    </form>
   );
 }

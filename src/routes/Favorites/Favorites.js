@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-import Layout from '@components/Layout';
 import MovieCard from '@components/MovieCard';
 import MovieGrid from '@components/MovieGrid';
 
@@ -16,7 +15,7 @@ export default function Favorites() {
   const [favorites] = useCollectionData(query);
 
   return (
-    <Layout>
+    <>
       <h2 className="capitalize text-3xl mb-20 mt-4">{`${currentUser.displayName}'s Favorites`}</h2>
       {favorites?.length ? (
         <MovieGrid>
@@ -29,6 +28,6 @@ export default function Favorites() {
           You haven't added any titles to your favorites yet.
         </div>
       )}
-    </Layout>
+    </>
   );
 }

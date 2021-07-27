@@ -15,8 +15,8 @@
   }
 }
 
-.buttons {
-  @apply ml-auto;
+.controls {
+  @apply flex items-center ml-auto;
 }
 
 .button {
