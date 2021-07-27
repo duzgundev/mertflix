@@ -1,7 +1,22 @@
 # Mertflix
 
 This is a simple project made by [me](https://m2t.dev) for learning purposes.
-I used [React](https://reactjs.org/), [SASS](https://sass-lang.com/) and a movie API called [TMDB](https://www.themoviedb.org/).
+
+You can:
+
+- Sign Up, Sign In
+- Search for any movie or TV show
+- Mark any title as your favorite
+- Login from any device to see your favorites later
+
+I used:
+
+- [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/) for routing
+- [React Context Api](https://reactjs.org/docs/context.html) for global state management
+- [TailwindCSS](https://tailwindcss.com/) along with [SASS](https://sass-lang.com/) for styling
+- [Firebase](https://firebase.google.com/) for authentication and firestore for storing favorites data
+- And an API called [TMDB](https://www.themoviedb.org/) for getting all the data I need
 
 [Live Demo](https://mertflix.netlify.app/)
 
@@ -9,11 +24,23 @@ I used [React](https://reactjs.org/), [SASS](https://sass-lang.com/) and a movie
 
 ## Once you download the project
 
-1- You will need your own [API key](https://developers.themoviedb.org/3/getting-started/introduction) for running the project locally.
+First go to projects root directory and run:
 
-2- After getting your API key, create a file called `.env` in projects `root` directory and inside the `.env` file type `REACT_APP_TMDB_API_KEY=[YOUR_API_KEY]`.
+```
+cp .env.example .env
+```
 
-### `yarn install`
+This will create an `.env` file with needed fields in root directory.
+
+You need three things for this project to work:
+
+1. A [TMDB API key](https://developers.themoviedb.org/3/getting-started/introduction).
+2. A [Firebase](https://firebase.google.com/products-build) web project and your Firebase config credentials.
+3. Enable Email/Password sign-in method in Firebase console.
+
+Once you get your credentials, open `.env` file and fill the related variables with your own credentials.
+
+### `yarn install` or `yarn`
 
 Downloads all the necessary dependencies and installs them in your project directory.
 
@@ -37,12 +64,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### TODO
 
-- [x] React router
-- [x] Context api
-- [x] Firebase auth
-- [x] TMDB setup
-- [x] Favoriye alma
-- [ ] Film detay modalı
-- [ ] Lazy loading
-- [ ] Responsive layout
-- [ ] Skeleton loader
+- [ ] Movie Detail Page
+- [ ] Lazy Loading
+- [ ] Responsive Layout (Actually, only Header section needs some changes)
+- [ ] Skeleton Loader
