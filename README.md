@@ -2,7 +2,7 @@
 
 This is a simple project made by [me](https://m2t.dev) for learning purposes.
 
-[Live Demo](https://mertflix.netlify.app/)
+[Live App](https://mertflix.netlify.app/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6282557b-37d1-41c5-9ce7-1cfcf0861e5c/deploy-status)](https://app.netlify.com/sites/mertflix/deploys)
 
