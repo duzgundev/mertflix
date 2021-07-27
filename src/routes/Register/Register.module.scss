@@ -9,3 +9,7 @@
   @apply p-2 mb-4
   rounded-sm;
 }
+
+.error {
+  @apply text-red-300 text-center mt-2;
+}

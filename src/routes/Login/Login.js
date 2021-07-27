@@ -10,6 +10,7 @@ import styles from './Login.module.scss';
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMsg, setErrorMsg] = useState(null);
   const history = useHistory();
 
   async function handleLogin(e) {
@@ -18,7 +19,7 @@ export default function Login() {
       await firebase.auth().signInWithEmailAndPassword(email, password);
       history.push('/favorites');
     } catch (error) {
-      console.error(error);
+      setErrorMsg(error.message);
     }
   }
 
@@ -41,6 +42,7 @@ export default function Login() {
         onChange={(e) => setPassword(e.target.value)}
       />
       <Button>Sign In</Button>
+      {errorMsg && <div className={styles.error}>{errorMsg}</div>}
     </form>
   );
 }

@@ -11,6 +11,7 @@ export default function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMsg, setErrorMsg] = useState(null);
   const history = useHistory();
 
   async function handleRegister(e) {
@@ -22,7 +23,7 @@ export default function Register() {
       });
       history.push('/favorites');
     } catch (error) {
-      console.error(error);
+      setErrorMsg(error.message);
     }
   }
 
@@ -53,6 +54,7 @@ export default function Register() {
         onChange={(e) => setPassword(e.target.value)}
       />
       <Button>Sign Up</Button>
+      {errorMsg && <div className={styles.error}>{errorMsg}</div>}
     </form>
   );
 }
