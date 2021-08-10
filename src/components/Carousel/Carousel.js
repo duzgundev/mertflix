@@ -7,6 +7,7 @@ export default function Carousel({ className, children, options }) {
     groupCells: true,
     contain: true,
     pageDots: false,
+    draggable: false,
   };
 
   return (

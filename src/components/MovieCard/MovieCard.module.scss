@@ -1,5 +1,5 @@
 .base {
-  @apply relative;
+  @apply relative cursor-pointer;
 
   &:hover {
     .icon {
@@ -22,6 +22,10 @@
   @apply text-center text-gray-300;
 }
 
+.button {
+  @apply absolute top-2 right-4;
+}
+
 .icon {
-  @apply absolute top-2 right-4 cursor-pointer opacity-0 transition-all;
+  @apply opacity-0 transition-all;
 }
