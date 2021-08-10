@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.1.2",
+    "@headlessui/react": "^1.4.0",
     "@heroicons/react": "^1.0.1",
     "axios": "^0.21.1",
     "classnames": "^2.3.1",
@@ -18,7 +19,7 @@
     "react-scripts": "4.0.1"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "TAILWIND_MODE=watch craco start",
     "build": "craco build",
     "eject": "react-scripts eject"
   },
@@ -35,6 +36,7 @@
     ]
   },
   "devDependencies": {
+    "@tailwindcss/postcss7-compat": "2.1.2",
     "autoprefixer": "^9",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
