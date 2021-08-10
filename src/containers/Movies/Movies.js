@@ -3,7 +3,7 @@ import MovieRow from '@components/MovieRow';
 
 export default function Movies() {
   return (
-    <>
+    <div className="space-y-10">
       <MovieRow title="Trending Now" fetchUrl={TMDB.fetchTrending} />
       <MovieRow
         title="Mertflix Originals"
@@ -15,6 +15,6 @@ export default function Movies() {
       <MovieRow title="Horror Movies" fetchUrl={TMDB.fetchHorrorMovies} />
       <MovieRow title="Romance Movies" fetchUrl={TMDB.fetchRomanceMovies} />
       <MovieRow title="Documentaries" fetchUrl={TMDB.fetchDocumentaries} />
-    </>
+    </div>
   );
 }
