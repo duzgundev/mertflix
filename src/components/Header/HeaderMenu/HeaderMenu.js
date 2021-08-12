@@ -5,6 +5,7 @@ import { AuthContext } from '@utils/auth';
 import { SearchContext } from '@utils/search';
 import firebase from '@utils/firebase';
 
+import HeaderMenuMobile from './HeaderMenuMobile';
 import Button from '@components/Button';
 import { SearchIcon } from '@heroicons/react/outline';
 
@@ -37,40 +38,43 @@ export default function HeaderMenu() {
   }
 
   return (
-    <div className={styles.base}>
-      <ul className={styles.links}>
-        {menuItems.map((item, index) => (
-          <li className={styles.link} key={index}>
-            <Link to={item.path}>{item.name}</Link>
-          </li>
-        ))}
-      </ul>
+    <>
+      <div className={styles.base}>
+        <ul className={styles.links}>
+          {menuItems.map((item, index) => (
+            <li className={styles.link} key={index}>
+              <Link to={item.path}>{item.name}</Link>
+            </li>
+          ))}
+        </ul>
 
-      <div className={styles.controls}>
-        <SearchIcon width="24" />
-        <input
-          className="h-8 ml-2 p-2 rounded-sm"
-          type="text"
-          placeholder="Search..."
-          onChange={handleSearch}
-        />
-        {!!currentUser ? (
-          <Button className={styles.button} onClick={handleLogout}>
-            Sign Out
-          </Button>
-        ) : (
-          <>
-            <Link to="/login">
-              <Button className={styles.button}>Sign In</Button>
-            </Link>
-            <Link to="/register">
-              <Button theme="outline" className={styles.button}>
-                Sign Up
-              </Button>
-            </Link>
-          </>
-        )}
+        <div className={styles.controls}>
+          <SearchIcon width="24" />
+          <input
+            className="h-8 ml-2 p-2 rounded-sm"
+            type="text"
+            placeholder="Search..."
+            onChange={handleSearch}
+          />
+          {!!currentUser ? (
+            <Button className={styles.button} onClick={handleLogout}>
+              Sign Out
+            </Button>
+          ) : (
+            <>
+              <Link to="/login">
+                <Button className={styles.button}>Sign In</Button>
+              </Link>
+              <Link to="/register">
+                <Button theme="outline" className={styles.button}>
+                  Sign Up
+                </Button>
+              </Link>
+            </>
+          )}
+        </div>
       </div>
-    </div>
+      <HeaderMenuMobile className="ml-auto" />
+    </>
   );
 }
