@@ -1,5 +1,5 @@
 .base {
-  @apply flex items-center flex-grow;
+  @apply hidden items-center flex-grow lg:flex;
 }
 
 .links {
